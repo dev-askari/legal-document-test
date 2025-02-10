@@ -1,0 +1,371 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.document-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  width: 240px;
+  height: 100%;
+  max-height: 170px;
+}
+
+.split-screen {
+  display: flex;
+  gap: 20px;
+}
+
+.pdf-preview {
+  flex: 1;
+}
+
+.mock-extractions {
+  flex: 1;
+}
+
+.content.flex-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.upload-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.upload-modal .upload-modal-content {
+  width: 500px;
+  /* height: 200px; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.upload-modal .upload-modal-content h2 {
+  width: 100%;
+  color: #000;
+  font-size: 20px;
+  margin: 0;
+}
+
+.file-upload-container {
+  width: 100%;
+}
+
+.file-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.required {
+  color: red;
+}
+
+.file-box {
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.file-box svg {
+  width: 100px;
+  height: 80px;
+  color: rgb(108, 99, 99);
+}
+
+.file-box p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.file-names {
+  font-size: 12px;
+  color: #000;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.file-box:hover {
+  background-color: #f5f5f5;
+}
+
+.file-box.dragging {
+  background-color: #f0f0f0;
+}
+
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.upload-modal .upload-modal-content .button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.document-box div p:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.detail-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+.detail-modal .detail-modal-content {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+  color: #000;
+  overflow: auto;
+}
+
+.detail-modal .detail-modal-content .detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+}
+
+.detail-modal .detail-modal-content .detail-head h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.detail-modal .detail-modal-content .detail-head button {
+  padding: 0.6em 1em;
+}
+
+.pdf-sec {
+  display: flex;
+  gap: 20px;
+  height: 80%;
+}
+
+.extractions {
+  width: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 500px;
+}
+
+.dashboard header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 40px 0;
+  font-size: 2rem;
+  color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .content.flex-list {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .extractions {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .document-box {
+    width: 100%;
+  }
+  .upload-modal .upload-modal-content {
+    width: 80%;
+  }
+  .pdf-sec {
+    flex-direction: column;
+  }
+  .dashboard header{
+    font-size: 1.2rem;
+ 
+  }
+
+  .upload-modal .upload-modal-content h2 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 767px) {
+  .file-box {
+    padding: 10px 20px;
+  }
+
+  .file-box svg {
+    width: 80px;
+    height: 50px;
+  }
+
+  .file-box p {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .content.flex-list {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .document-box {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+  .document-box {
+    width: 29%;
+  }
+  .content.flex-list {
+    gap: 20px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1600px) {
+  .document-box {
+    width: 270px;
+  }
+}
